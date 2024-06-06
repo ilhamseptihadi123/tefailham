@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .logo {
   width: 80%;
 }
