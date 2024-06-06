@@ -11,7 +11,7 @@
           <div v-for="(book, i) in books" :key="i" class="col-lg-2">
             <div class="card mb-3">
               <div class="card-body">
-                <nuxt-link to="/rincian/buku1">
+                <nuxt-link :to="`/buku/${book.id}`">
                   <img :src="book.cover" class="cover" alt="cover 1" />
                 </nuxt-link>
               </div>
@@ -30,6 +30,7 @@
 const supabase = useSupabaseClient()
 
 const books = ref([])
+const keyword = ref('')
 
 const getBooks = async () => {
   const { data, error } = await supabase.from('buku').select(`*, kategori(*)`)
@@ -40,8 +41,7 @@ const getBooks = async () => {
 onMounted(() => {
   getBooks()
 })
-
-const keyword = ref('')
+  
 </script>
 
 <style scoped>

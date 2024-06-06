@@ -1,5 +1,5 @@
 <script setup>
-const supabase = useSupabaseClinet()
+const supabase = useSupabaseClient()
 
 const route = useRoute()
 const buku = ref(null)
@@ -21,7 +21,7 @@ onMounted(() => {
       <div class="col-lg-6 pt-5 d-flex justify-content-center">
         <div class="card p-0">
           <div class="card-body p-0">
-            <img src="cover1.jpg" width="220px" height="340px" class="cover" alt="cover1">
+            <img :src="buku.cover" width="220px" height="340px" class="cover" alt="cover1">
           </div>
         </div>
       </div>
